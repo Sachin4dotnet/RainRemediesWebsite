@@ -1,0 +1,42 @@
+﻿<?xml version="1.0"?>
+<configuration>
+	<system.web>
+		<compilation debug="true" targetFramework="4.0"/>
+
+    <urlMappings>
+      <add url="~/" mappedUrl="~/Home.aspx"/>
+      <add url="~/Home" mappedUrl="~/Home.aspx"/>
+      <add url="~/Products" mappedUrl="~/Products.aspx"/>
+      <add url="~/About" mappedUrl="~/AboutUs.aspx"/>
+      <add url="~/Contact" mappedUrl="~/ContactUs.aspx"/>
+      <add url="~/ProductGallary" mappedUrl="~/PhotoGallary.aspx"/>
+      <add url="~/Order" mappedUrl="~/Order.aspx"/>
+    </urlMappings>
+  </system.web>
+  
+  <appSettings>
+    
+	<add key="mailid" value="sac4temp@asia.com"/>
+    <add key="mailpswd" value="@sac4temp"/>
+    <add key="smtp" value="smtp.gmail.com"/>
+    <add key="port" value="587"/>
+    <add key="ssl" value="true"/>
+	
+    <!--<add key="to" value="rainremedies@gmail.com"/>-->
+    <!--<add key="from" value="123sac4temp@gmail.com"/>-->
+    <!--<add key="from" value="info@rainremedies.com"/>-->
+    <!--<add key="mailid" value="sac123@asia.com"/>-->
+    <!--<add key="mailid" value="info@rainremedies.com"/>-->
+    <!--<add key="mailpswd" value="sac123456"/>-->
+    <!--<add key="mailpswd" value="VnDrNQNJv8"/>-->
+    <!--<add key="port" value="465"/> <!--for mail.com -->
+    <!--<add key="port" value="587"/>--> <!--for gmail -->
+    <!--<add key="port" value="465"/>-->
+    <!--<add key="smtp" value="smtp.mail.com"/> <!--for mail.com -->
+    <!--<add key="smtp" value="smtp.gmail.com"/>--> <!--for gmail -->
+    <!--<add key="smtp" value="smtp.rainremedies.com"/>-->
+    <!--<add key="ssl" value="true"/> <!--for mail.com & gmail-->
+    <!--<add key="ssl" value="false"/>-->
+
+  </appSettings>
+</configuration>

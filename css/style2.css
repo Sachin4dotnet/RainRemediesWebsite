@@ -1,0 +1,133 @@
+@charset "utf-8";
+/* CSS Document */
+
+@font-face {
+	font-family:museo;
+	src: url('../font/museo300.woff'),  url('font/museo300.woff'); /* IE9 */
+}
+@font-face {
+	font-family:lobster;
+	src: url('../font/lobster.woff'),  url('font/lobster.woff'); /* IE9 */
+}
+@font-face {
+	font-family:jenna;
+	src: url('../font/jenna.woff'),  url('font/jenna.woff'); /* IE9 */
+}
+
+.ui-carousel {
+    height: 136px;
+    margin: 0;
+    overflow: auto;
+    padding: 0;
+    position: relative; /*for ie7 to work e.g in html carousels*/
+    width: 641px;
+}
+
+.ui-carousel > .wrapper {
+    margin: 0;
+    padding: 0;
+    width: 9999px;
+}
+
+.ui-carousel > .wrapper > * {
+    border: 0;
+    display: block;
+    float: left;
+    height: 136px;
+    overflow: auto;
+    width: 641px;
+}
+#container {
+    width: 441px;
+    position: relative;
+    margin: 0 auto;
+    height: 136px;
+}
+
+#carousel {
+    width: 440px;
+    height: 136px;
+    float: left;
+}
+
+#ui-carousel-next, #ui-carousel-prev {
+    width: 37px;
+    height: 51px;
+    background: url(../images/slider-prev.png) center center no-repeat;
+    display: block;
+    position: absolute;
+    top: 50px;
+    z-index: 9990;
+}
+
+#ui-carousel-next {
+    right: 0;
+    background-image: url(../images/slider-next.png);
+}
+
+#ui-carousel-prev {
+    left: 0;
+}
+
+#ui-carousel-next > span, #ui-carousel-prev > span {
+    display: none;
+}
+
+.slide {
+    margin: 0;
+    position: relative;
+}
+
+.slide h1 {
+    color: #0c517d;
+    margin: 0;
+    padding: 0;
+    line-height: 45px;
+    font-weight: normal;
+    font-size: 34px;
+    font-family: 'Sofia' , cursive;
+}
+
+.slide p {
+    color: #000;
+    margin: 0;
+    padding: 10px 0 0 0;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+#slide01 > img, #slide01 > a img {
+    position: absolute;
+    top: 15px;
+    right: 40px;
+}
+
+#slide01 > .text {
+    position: absolute;
+    left: 0;
+    width: 400px;
+    top: 0;
+    padding: 0;
+    font-weight: bold;
+    background: url(../images/white-bg.png);
+    font-family: 'Sofia' , cursive;
+}
+
+
+#pages {
+    width: 100%;
+    margin: 0;
+    text-align: center !important;
+    position: absolute;
+    bottom: 25px;
+}
+
+.bullet {
+    background: url(../images/page-off.png) center center no-repeat;
+    display: block;
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    margin-right: 5px;
+    display: inline-block;
+}

@@ -1,0 +1,236 @@
+﻿<%@ Master Language="VB" CodeFile="MasterPage.master.vb" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Rain Remedies - Pharma products in Gujarat & India</title>
+    <link rel="icon" type="image/jpg" href="images/favicon.jpg">
+    <link rel="stylesheet" type="text/css" media="all" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="css/style2.css" />
+    <script type="text/javascript" src="js/jquery-1.7.1.js"></script>
+    <script type="text/javascript" src="js/jquery.ui.core.js"></script>
+    <script type="text/javascript" src="js/jquery.ui.widget.js"></script>
+    <script type="text/javascript" src="js/jquery.ui.rcarousel.js"></script>
+    <script type="text/javascript">
+        jQuery(function ($) {
+            function generatePages() {
+                var _total, i, _link;
+
+                _total = $("#carousel").rcarousel("getTotalPages");
+
+                for (i = 0; i < _total; i++) {
+                    _link = $("<a href='#'></a>");
+
+                    $(_link)
+							.bind("click", { page: i },
+								function (event) {
+								    $("#carousel").rcarousel("goToPage", event.data.page);
+								    event.preventDefault();
+								}
+							)
+							.addClass("bullet off")
+							.appendTo("#pages");
+                }
+
+                // mark first page as active
+                $("a:eq(0)", "#pages")
+						.removeClass("off")
+						.addClass("on")
+						.css("background-image", "url(images/page-on.png)");
+
+            }
+
+            function pageLoaded(event, data) {
+                $("a.on", "#pages")
+						.removeClass("on")
+						.css("background-image", "url(images/page-off.png)");
+
+                $("a", "#pages")
+						.eq(data.page)
+						.addClass("on")
+						.css("background-image", "url(images/page-on.png)");
+            }
+
+            $("#carousel").rcarousel(
+					{
+					    visible: 1,
+					    step: 1,
+					    speed: 500,
+					    auto: {
+					        enabled: true
+					    },
+					    width: 444,
+					    height: 136,
+					    start: generatePages,
+					    pageLoaded: pageLoaded
+					}
+				);
+
+            $("#ui-carousel-next")
+					.add("#ui-carousel-prev")
+					.add(".bullet")
+					.hover(
+						function () {
+						    $(this).css("opacity", 0.7);
+						},
+						function () {
+						    $(this).css("opacity", 1.0);
+						}
+					);
+        });
+    </script>
+    <script type="text/javascript" src="js/jquery.tinyscrollbar.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#scrollbar').tinyscrollbar();
+        });
+    </script>
+    <link rel="stylesheet" href="colorbox/colorbox.css" />
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>-->
+    <script type="text/javascript" src="colorbox/jquery.colorbox.js"></script>
+    <script type="text/javascript" src="js/slider/sliders.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //Examples of how to assign the ColorBox event to elements
+            $(".group1").colorbox({ rel: 'group1' });
+            $(".group2").colorbox({ rel: 'group2', transition: "fade" });
+            $(".group3").colorbox({ rel: 'group3', transition: "none", width: "75%", height: "75%" });
+            $(".group4").colorbox({ rel: 'group4', slideshow: true });
+            $(".ajax").colorbox();
+            $(".youtube").colorbox({ iframe: true, innerWidth: 909, innerHeight: 344 });
+            $(".iframe").colorbox({ iframe: true, width: "80%", height: "80%" });
+            $(".inline").colorbox({ inline: true, width: "65%" });
+            $(".callbacks").colorbox({
+                onOpen: function () { alert('onOpen: colorbox is about to open'); },
+                onLoad: function () { alert('onLoad: colorbox has started to load the targeted content'); },
+                onComplete: function () { alert('onComplete: colorbox has displayed the loaded content'); },
+                onCleanup: function () { alert('onCleanup: colorbox has begun the close process'); },
+                onClosed: function () { alert('onClosed: colorbox has completely closed'); }
+            });
+
+            //Example of preserving a JavaScript event for inline calls.
+            $("#click").click(function () {
+                $('#click').css({ "background-color": "#f00", "color": "#fff", "cursor": "inherit" }).text("Open this window again and this message will still be here.");
+                return false;
+            });
+        });
+    </script>
+    <link href='http://fonts.googleapis.com/css?family=Sofia' rel='stylesheet' type='text/css'>
+    <%--<script type="text/javascript" id="sourcecode">
+        $(function () {
+            $('.scroll-pane').jScrollPane();
+        });
+        function MM_jumpMenu(targ, selObj, restore) { //v3.0
+            eval(targ + ".location='" + selObj.options[selObj.selectedIndex].value + "'");
+            if (restore) selObj.selectedIndex = 0;
+        }
+    </script>--%>
+
+    <!-- Hotjar Tracking Code for rainremedies.com -->
+    <script>
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+            h._hjSettings = { hjid: 375555, hjsv: 5 };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script'); r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, '//static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
+    <!-- === END === Hotjar Tracking Code for rainremedies.com -->
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div>
+        <div class="container">
+            <div class="wrapper">
+                <div id="header">
+                    <!-- ==== START ==== -->
+                    <!-- added by Sachin on 2-Jan-2016 to retate capsule in logo -->
+                    <div class="logo" style="position: relative">
+                        <a href="Home">
+                            <img src="images/logo-wo-cap.png" height="66" alt="" style="position: absolute">
+                            <img id="rotate3D" src="images/logo-cap.png" height="66" alt="" style="position: absolute">
+                        </a>
+                    </div>
+                    <script type="text/javascript">
+                        var cap, ny = 0;
+                        function startYRotate() {
+                            ny = ny + 1;
+                            cap.style.transform = "rotateY(" + ny + "deg)";
+                            cap.style.webkitTransform = "rotateY(" + ny + "deg)";
+                            cap.style.OTransform = "rotateY(" + ny + "deg)";
+                            cap.style.MozTransform = "rotateY(" + ny + "deg)";
+                            if (ny == 180 || ny >= 360) {
+                                //clearInterval(rotYINT)
+                                if (ny >= 360) { ny = 0; }
+                            }
+                        }
+                        $(document).ready(function () {
+                            cap = document.getElementById("rotate3D");
+                            setInterval("startYRotate()", 10);
+                        });
+                    </script>
+                    <!-- ==== END ==== -->
+                    <!-- commented by Sachin on 2-Jan-2016 to retate capsule in logo
+					<div class="logo">
+                        <a href="Home">
+                            <img src="images/logo.png" height="66" alt="" /></a></div> -->
+                    <div id="header-rgt">
+                        <h2>
+                            <a href="callto:+917203880088">+91 72038 80088</a><br />
+                            <span><a href="mailto:rainremedies@gmail.com">rainremedies@gmail.com</a></span>
+                        </h2>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div id='cssmenu'>
+                    <ul>
+                        <li class='active'><a href="Home"><span>Home</span></a></li>
+                        <li><a href="About"><span>About Us</span></a> </li>
+                        <li><a href='Products'><span>Products</span></a></li>
+                        <li><a href="ProductGallary"><span>Photo Gallery</span></a></li>
+                        <li><a href="http://rainremedies.blogspot.in/"><span>Blog</span></a></li>
+                        <li class='last'><a href="Contact"><span>Contact Us</span></a></li>
+                        <li class='last' style="float: right; background: #e17310;">
+                            <a href="Order" class="button_example" style="padding: 11px 20px; box-shadow: none;">
+                                <span>ORDER ONLINE</span></a></li>
+                    </ul>
+                </div>
+                <%--============================================================--%>
+                <%--================== Banner Start ======================--%>
+                <%--============================================================--%>
+                <div>
+                    <asp:ContentPlaceHolder ID="BannerPlaceHolder" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+                <%--============================================================--%>
+                <%--=================== Banner End =======================--%>
+                <%--============================================================--%>
+            </div>
+        </div>
+        <%--============================================================--%>
+        <%--================== Content Page Start ======================--%>
+        <%--============================================================--%>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <%--============================================================--%>
+        <%--=================== Content Page End =======================--%>
+        <%--============================================================--%>
+        <div id="footer">
+            <div id="footer-wrap">
+                <div class="flt_lft">
+                    <a href="Home">Home</a> | <a href='Products'>Products</a> | <a href="Order"><b>Order Online</b></a> | <a href="ProductGallary">Products Gallary</a> | <a href="About">About Us</a> | <a href="Contact">Contact Us</a>
+                </div>
+                <div class="flt_rht">
+                    Copyright @ Rain Remedies 2012 - <%= Date.Today.Year.ToString%>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

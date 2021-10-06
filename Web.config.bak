@@ -1,0 +1,27 @@
+﻿<?xml version="1.0"?>
+<configuration>
+	<system.web>
+		<compilation debug="true" targetFramework="4.0"/>
+
+    <urlMappings>
+      <add url="~/" mappedUrl="~/Home.aspx"/>
+      <add url="~/Home" mappedUrl="~/Home.aspx"/>
+      <add url="~/Products" mappedUrl="~/Products.aspx"/>
+      <add url="~/About" mappedUrl="~/AboutUs.aspx"/>
+      <add url="~/Contact" mappedUrl="~/ContactUs.aspx"/>
+      <add url="~/ProductGallary" mappedUrl="~/PhotoGallary.aspx"/>
+      <add url="~/Order" mappedUrl="~/Order.aspx"/>
+    </urlMappings>
+  </system.web>
+  
+  <appSettings>
+    
+	<add key="mailid" value="sac4temp@gmail.com"/>
+    <add key="mailpswd" value="@sac4temp"/>
+    <add key="smtp" value="smtp.gmail.com"/>
+    <add key="port" value="25"/>
+    <add key="ssl" value="true"/>
+	   
+
+  </appSettings>
+</configuration>
